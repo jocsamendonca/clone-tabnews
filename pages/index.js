@@ -1,9 +1,5 @@
 function Home() {
-  return <h1>Frase de Teste. 😎</h1>;
-}
-
-function teste1() {
-  console.log("teste de formatação");
+  return <h1>Cuida Isaura! Vem pra casa. 😎</h1>;
 }
 
 export default Home;
