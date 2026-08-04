@@ -84,7 +84,7 @@ export class MethodNotAllawedError extends Error {
     super("Método não permitido para este endpoint.");
     this.name = "MethodNotAllawedError";
     this.action =
-      "Verifique se o método HTTP enviado é válida para este enpoint.";
+      "Verifique se o método HTTP enviado é válido para este enpoint.";
     this.statusCode = 405;
   }
 
