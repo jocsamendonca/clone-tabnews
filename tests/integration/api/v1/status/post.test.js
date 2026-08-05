@@ -18,7 +18,7 @@ describe("POST to /api/v1/status", () => {
         name: "MethodNotAllawedError",
         message: "Método não permitido para este endpoint.",
         action:
-          "Verifique se o método HTTP enviado é válida para este enpoint.",
+          "Verifique se o método HTTP enviado é válido para este enpoint.",
         status_code: 405,
       });
     });
