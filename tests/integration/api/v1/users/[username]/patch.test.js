@@ -4,7 +4,7 @@ import user from "models/user";
 import password from "models/password.js";
 
 beforeAll(async () => {
-  await orchestrator.waitForAllServicess();
+  await orchestrator.waitForAllServices();
   await orchestrator.clearDatabase();
   await orchestrator.runPendingMigrations();
 });
@@ -118,6 +118,7 @@ describe("PATCH /api/v1/users/[username]", () => {
         id: responseBody.id,
         username: "uniqueUser2",
         email: createdUser.email,
+        features: [],
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
@@ -154,6 +155,7 @@ describe("PATCH /api/v1/users/[username]", () => {
         id: responseBody.id,
         username: responseBody.username,
         email: "uniqueEmail2@curso.dev",
+        features: [],
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
@@ -192,6 +194,7 @@ describe("PATCH /api/v1/users/[username]", () => {
         id: responseBody.id,
         username: responseBody.username,
         email: responseBody.email,
+        features: [],
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,

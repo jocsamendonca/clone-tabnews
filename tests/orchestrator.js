@@ -8,7 +8,7 @@ import session from "models/session.js";
 
 const emailHttpUrl = `http://${process.env.EMAIL_HTTP_HOST}:${process.env.EMAIL_HTTP_PORT}`;
 
-async function waitForAllServicess() {
+async function waitForAllServices() {
   await waitForWebServer();
   await waitForEmailServer();
 
@@ -85,7 +85,7 @@ async function getLastEmail() {
 }
 
 const orchestrator = {
-  waitForAllServicess,
+  waitForAllServices: waitForAllServices,
   clearDatabase,
   runPendingMigrations,
   createUser,

@@ -4,7 +4,7 @@ import orchestrator from "tests/orchestrator.js";
 import session from "models/session.js";
 
 beforeAll(async () => {
-  await orchestrator.waitForAllServicess();
+  await orchestrator.waitForAllServices();
   await orchestrator.clearDatabase();
   await orchestrator.runPendingMigrations();
 });
@@ -37,6 +37,7 @@ describe("GET /api/v1/user", () => {
         id: createdUser.id,
         username: "UserWithValidSession",
         email: createdUser.email,
+        features: [],
         password: createdUser.password,
         created_at: createdUser.created_at.toISOString(),
         updated_at: createdUser.updated_at.toISOString(),
@@ -99,6 +100,7 @@ describe("GET /api/v1/user", () => {
         id: createdUser.id,
         username: "UserWithHalfwayExpiredSession",
         email: createdUser.email,
+        features: [],
         password: createdUser.password,
         created_at: createdUser.created_at.toISOString(),
         updated_at: createdUser.updated_at.toISOString(),

@@ -4,7 +4,7 @@ import user from "models/user";
 import password from "models/password.js";
 
 beforeAll(async () => {
-  await orchestrator.waitForAllServicess();
+  await orchestrator.waitForAllServices();
   await orchestrator.clearDatabase();
   await orchestrator.runPendingMigrations();
 });
@@ -32,6 +32,7 @@ describe("POST /api/v1/users", () => {
         id: responseBody.id,
         username: "jocsamendonca",
         email: "contato@curso.dev",
+        features: [],
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,

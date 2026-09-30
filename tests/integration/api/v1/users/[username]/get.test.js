@@ -2,7 +2,7 @@ import { version as uuidVersion } from "uuid";
 import orchestrator from "tests/orchestrator.js";
 
 beforeAll(async () => {
-  await orchestrator.waitForAllServicess();
+  await orchestrator.waitForAllServices();
   await orchestrator.clearDatabase();
   await orchestrator.runPendingMigrations();
 });
@@ -26,6 +26,7 @@ describe("GET /api/v1/users/[username]", () => {
         id: response2Body.id,
         username: "MesmoCase",
         email: createdUser.email,
+        features: [],
         password: response2Body.password,
         created_at: response2Body.created_at,
         updated_at: response2Body.updated_at,
@@ -53,6 +54,7 @@ describe("GET /api/v1/users/[username]", () => {
         id: responseBody.id,
         username: "CaseDiferente",
         email: createdUser.email,
+        features: [],
         password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
